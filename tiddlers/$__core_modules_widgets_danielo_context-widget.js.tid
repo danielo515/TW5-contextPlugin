@@ -1,6 +1,6 @@
 created: 20140418153435777
 creator: danielo
-modified: 20140529185409648
+modified: 20140530140313512
 modifier: danielo
 module-type: widget
 tags: plugin
@@ -41,19 +41,22 @@ contextWidget.prototype.render = function(parent,nextSibling) {
 	this.computeAttributes();
 	// Execute our logic
 	this.execute();
-	 this.domNode = this.document.createElement("pre");
-	this.domNode.className="tw-context-div";
-    this.domNode.setAttribute("hidden","true")
+    
   if(this.term && this.term.length>3){
- 	  this.createRegexp();
+     
+      this.createRegexp();
       var matches = this.executeRegexp();
-	  if(matches.length > 0) this.composeResults( matches ); //this appends to domNode and reveals it
-
+	  if(matches.length > 0){ 
+        this.domNode = this.document.createElement("pre");
+        this.domNode.className="tw-context-div";
+        this.composeResults( matches ); //this appends to domNode        
+      	// Insert element
+      	parent.insertBefore(this.domNode,nextSibling);
+      	this.renderChildren(this.domNode,null);
+	  	this.domNodes.push(this.domNode);
+      }
   }
-	/// Insert element
-    parent.insertBefore(this.domNode,nextSibling);
-    this.renderChildren(this.domNode,null);
-	this.domNodes.push(this.domNode);
+	
 };
 
 /*

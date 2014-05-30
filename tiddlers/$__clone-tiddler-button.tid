@@ -1,0 +1,9 @@
+created: 20131129194646834
+creator: Danielo
+modified: 20140405232952816
+modifier: Danielo
+tags: $:/tags/ViewToolbar button
+title: $:/clone-tiddler-button
+type: text/vnd.tiddlywiki
+
+<span title="Clone this tiddler"><$button message="tw-new-tiddler" class="btn-invisible" param=<<currentTiddler>>>{{$:/images/clone-tiddler-button}}</$button></span>

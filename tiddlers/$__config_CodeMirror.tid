@@ -1,0 +1,24 @@
+created: 20140528225146390
+modified: 20140529124845342
+tags: configuration
+title: $:/config/CodeMirror
+type: application/json
+
+{
+  "require": [
+      "$:/plugins/tiddlywiki/codemirror/mode/javascript/javascript.js",
+      "$:/plugins/tiddlywiki/codemirror/addon/dialog/dialog.js",
+      "$:/plugins/tiddlywiki/codemirror/addon/search/searchcursor.js",
+      "$:/plugins/tiddlywiki/codemirror/keymap/vim.js",
+      "$:/plugins/tiddlywiki/codemirror/addon/edit/matchbrackets.js",
+      "$:/plugins/tiddlywiki/codemirror/addon/edit/closebrackets.js",
+      "$:/plugins/tiddlywiki/codemirror/keymap/sublime.js"
+  ],
+  "configuration": {
+    "keyMap": "sublime",
+     "showCursorWhenSelecting": true,
+      "matchBrackets":true,
+   	 "autoCloseBrackets" : true,
+     "theme": "erlang-dark"
+  }
+}

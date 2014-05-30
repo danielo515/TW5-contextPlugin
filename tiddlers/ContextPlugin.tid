@@ -1,0 +1,17 @@
+created: 20140530165303437
+description: highlights a search term with its context. Something similar to google search.
+modified: 20140530171118422
+title: ContextPlugin
+type: text/vnd.tiddlywiki
+
+
+
+|! parameter |! description | !default |
+| term | the term you want to search ||
+| searchTerm | an alias for the previous one ||
+| tiddler | the tiddler's name to look into | current tiddler |
+| length | number of context characters to show | 50 |
+| before | number of characters before the matched term to show | the value of the length parameter |
+| after | number of characters after the matched term to show | the value of the length parameter |
+| maxMatches | maximun number of matched elements to show. Incrementing this can cause several performance issues | 10 |
+||| |

@@ -1,0 +1,33 @@
+caption: {{$:/language/Search/Context/Caption}}
+created: 20140530173407542
+modified: 20140530174311748
+tags: $:/tags/AdvancedSearch contextPlugin
+title: Context Search
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/Search/
+<$linkcatcher to="$:/temp/advancedsearch">
+
+<<lingo Standard/Hint>>
+
+<div class="tw-search"><$edit-text tiddler="$:/temp/advancedsearch" type="search" tag="input"/><$reveal state="$:/temp/advancedsearch" type="nomatch" text=""> <$link to="" class="btn-invisible">{{$:/core/images/close-button}}</$link></$reveal></div>
+
+</$linkcatcher>
+
+<$reveal state="$:/temp/advancedsearch" type="nomatch" text="">
+<div class="tw-search-results">
+
+<<lingo Standard/Matches>>
+
+<$list filter="[!is[system]search{$:/temp/advancedsearch}sort[title]limit[250]]">
+{{!!title||$:/core/ui/ListItemTemplate}}
+<$context term={{$:/temp/advancedsearch}}/>
+</$list>
+
+</div>
+
+</$reveal>
+
+<$reveal state="$:/temp/advancedsearch" type="match" text="">
+
+</$reveal>

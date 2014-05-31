@@ -1,9 +1,9 @@
 created: 20140529162823729
-modified: 20140529180906019
-tags: $:/tags/stylesheet
+modified: 20140530225152964
+tags: $:/tags/stylesheet contextPlugin
 title: $/plugins/danielo/context/css
 type: text/css
 
 .matched{background-color:yellow}
-.tw-context-div{/*border:1px solid;
+.tw-context {/*border:1px solid;
   /*word-break: break-all; word-wrap: break-word*/}

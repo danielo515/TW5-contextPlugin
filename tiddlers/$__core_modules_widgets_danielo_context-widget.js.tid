@@ -1,9 +1,9 @@
 created: 20140418153435777
 creator: danielo
-modified: 20140530164859012
+modified: 20140530231943517
 modifier: danielo
 module-type: widget
-tags: plugin
+tags: plugin contextPlugin
 title: $:/core/modules/widgets/danielo/context-widget.js
 type: application/javascript
 
@@ -47,8 +47,8 @@ contextWidget.prototype.render = function(parent,nextSibling) {
       this.createRegexp();
       var matches = this.executeRegexp();
 	  if(matches.length > 0){ 
-        this.domNode = this.document.createElement("pre");
-        this.domNode.className="tw-context-div";
+        this.domNode = this.document.createElement(this.element);
+        this.domNode.className="tw-context";
         this.composeResults( matches ); //this appends to domNode        
       	// Insert element
       	parent.insertBefore(this.domNode,nextSibling);
@@ -64,13 +64,14 @@ Compute the internal state of the widget
 */
 contextWidget.prototype.execute = function() {
 	// Get the parameters from the attributes
-    this.matchedClass = this.getAttribute("class","matched");
+    this.matchedClass = this.getAttribute("matchClass","matched");
 	this.tiddler = this.getAttribute( "tiddler",this.getVariable("currentTiddler") );
     this.term =  this.getAttribute("term",this.getAttribute("searchTerm"));
 	this.contextLength = this.getAttribute("length",50);
     this.before = this.getAttribute("before",this.contextLength);
     this.after = this.getAttribute("after",this.contextLength);
     this.maxMatches = this.getAttribute("maxMatches",10);
+    this.element = this.getAttribute("element","pre");
 	this.makeChildWidgets();
 };
 

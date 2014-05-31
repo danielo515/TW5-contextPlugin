@@ -1,17 +1,73 @@
 created: 20140530165303437
 description: highlights a search term with its context. Something similar to google search.
-modified: 20140530171118422
+modified: 20140530233957164
+tags: contextPlugin
 title: ContextPlugin
 type: text/vnd.tiddlywiki
 
+This widget looks for a word inside a tiddler and shows the result with the searched word highlighted with some of its context. 
 
+!Installation 
+The easiest way is to just grab the plugin. It contents the basic tiddlers needed. Just drag and drop the following link into your own wiki: 
+
+
+::[[$:/plugins/danielo/contextPlugin]]
+
+!Usage
+
+After installing the plugin you will have a new tab in [[$:/AdvancedSearch]] called [[Context Search]]. If you want this functionality in other places you will have to edit the desired tiddler yourself adding the ''context widget''. For more details about using the widget see the section below.
+
+!!Using the widget
+
+The very basic usage of the widget is the following:
+
+```
+<$context term="lorem"/>
+```
+Which will render as:
+<$context term="lorem"/>
+
+The widgets will search inside the current tiddler by default. Because that you see the same content twice here. This example is not very useful. Other more meaningful would be:
+
+```
+<$list filter="[search{$:/temp/advancedsearch}sort[title]limit[250]]">
+{{!!title||$:/core/ui/ListItemTemplate}}
+<$context term={{$:/temp/advancedsearch}}/>
+</$list>
+```
+
+That will search for tiddlers containing the text specified in [[$:/temp/advancedsearch]] and will display a link to the matching tiddlers plus a preview of the matching content. Something very similar is used in [[Context Search]]. Below you can find a complete list of parameters and their default values.
 
 |! parameter |! description | !default |
-| term | the term you want to search ||
-| searchTerm | an alias for the previous one ||
-| tiddler | the tiddler's name to look into | current tiddler |
-| length | number of context characters to show | 50 |
-| before | number of characters before the matched term to show | the value of the length parameter |
-| after | number of characters after the matched term to show | the value of the length parameter |
+| term | The term you want to search ||
+| searchTerm | An alias for the previous one ||
+| tiddler | The tiddler's name to look into | current tiddler |
+| length | Number of context characters to show | 50 |
+| before | Number of characters before the matched term to show | the value of the length parameter |
+| after | Number of characters after the matched term to show | the value of the length parameter |
 | maxMatches | maximun number of matched elements to show. Incrementing this can cause several performance issues | 10 |
-||| |
+| element | Node element to create. This element will contain the results of the search. If you want to style it its class is `tw-context` | `<pre>` |
+| matchClass | The css class to assign to the matched terms in the results. This is used to highlight the results | matched |
+
+!Customizing the output
+There are not many ways to customize the output of this widget. You can specify ''what type of node you want to create'' to wrap the results (div,span...). The default is `<pre>`. This container is created with the class `tw-context` so you can easily apply styles to it. Something similar happens to the ''highlighted'' words. You can specify the name of the class to assign to it and also you can apply styles to that class.
+
+A very basic example of customization could be:
+
+# Create a tiddler, for example [[$/plugins/danielo/context/css]]
+# Paste the following text or any css rule you want: """
+
+<pre>
+.matched{background-color:yellow}
+.tw-context {
+  border:1px solid blue;
+  word-break: break-all; word-wrap: break-word;}
+</pre>
+"""
+# Tag it with `$:/tags/stylesheet`
+# Save the tiddler
+
+!Live example
+Here is a transclusion of [[Context Search]] so you can see the plugin in action:
+
+{{Context Search}}

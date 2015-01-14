@@ -1,6 +1,6 @@
 created: 20140530165303437
 description: highlights a search term with its context. Something similar to google search.
-modified: 20140530233957164
+modified: 20141030190433260
 tags: contextPlugin
 title: ContextPlugin
 type: text/vnd.tiddlywiki
@@ -11,7 +11,7 @@ This widget looks for a word inside a tiddler and shows the result with the sear
 The easiest way is to just grab the plugin. It contents the basic tiddlers needed. Just drag and drop the following link into your own wiki: 
 
 
-::[[$:/plugins/danielo/contextPlugin]]
+::[[$:/plugins/danielo515/ContextPlugin]]
 
 !Usage
 
@@ -54,7 +54,7 @@ There are not many ways to customize the output of this widget. You can specify 
 
 A very basic example of customization could be:
 
-# Create a tiddler, for example [[$/plugins/danielo/context/css]]
+# Create a tiddler, for example [[$/plugins/danielo515/context/css]]
 # Paste the following text or any css rule you want: """
 
 <pre>

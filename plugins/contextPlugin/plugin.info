@@ -1,0 +1,10 @@
+{
+	"title": "$:/plugins/danielo515/ContextPlugin",
+	"description": "Context search - provides visual highlight of search results",
+	"author": "Danielo Rodrigez",
+	"version": "2.1.0",
+	"core-version": ">=5.1.0",
+	"source": "https://github.com/danielo515/TW5-contextPlugin",
+	"plugin-type": "plugin",
+	"list":"readme"
+}

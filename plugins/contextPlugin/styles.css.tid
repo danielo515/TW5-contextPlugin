@@ -1,7 +1,6 @@
 created: 20140529162823729
-modified: 20140530225152964
 tags: $:/tags/Stylesheet contextPlugin
-title: $/plugins/danielo/context/css
+title: $:/plugins/danielo515/ContextPlugin/Stylesheet/results
 type: text/css
 
 .matched{background-color:yellow}

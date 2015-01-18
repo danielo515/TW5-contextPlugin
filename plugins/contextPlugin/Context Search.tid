@@ -1,7 +1,6 @@
 caption: {{$:/plugins/danielo515/ContextPlugin/Caption}}
 created: 20140530173407542
-modified: 20140530174311748
-tags: $:/tags/AdvancedSearch contextPlugin
+tags: $:/tags/AdvancedSearch
 title: Context Search
 type: text/vnd.tiddlywiki
 

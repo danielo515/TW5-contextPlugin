@@ -1,17 +1,5 @@
-created: 20140530165303437
-description: highlights a search term with its context. Something similar to google search.
-modified: 20141030190433260
-tags: contextPlugin
-title: ContextPlugin
-type: text/vnd.tiddlywiki
-
-This widget looks for a word inside a tiddler and shows the result with the searched word highlighted with some of its context. 
-
-!Installation 
-The easiest way is to just grab the plugin. It contents the basic tiddlers needed. Just drag and drop the following link into your own wiki: 
-
-
-::[[$:/plugins/danielo515/ContextPlugin]]
+title: $:/plugins/danielo515/ContextPlugin/readme
+This widget works as regular search and shows the result with the searched word highlighted with some of its context.
 
 !Usage
 
@@ -66,8 +54,3 @@ A very basic example of customization could be:
 """
 # Tag it with `$:/tags/stylesheet`
 # Save the tiddler
-
-!Live example
-Here is a transclusion of [[Context Search]] so you can see the plugin in action:
-
-{{Context Search}}

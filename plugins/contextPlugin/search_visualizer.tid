@@ -1,0 +1,8 @@
+title: $:/plugins/danielo515/ContextPlugin/visualizer
+tags: $:/tags/SearchResults
+caption: Context
+
+<$list filter="[!is[system]search{$:/temp/search}sort[title]limit[250]]">
+  {{!!title||$:/core/ui/ListItemTemplate}}
+  <$context term={{$:/temp/search}} />
+</$list>

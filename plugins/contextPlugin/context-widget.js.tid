@@ -41,7 +41,7 @@ contextWidget.prototype.render = function(parent,nextSibling) {
 	// Execute our logic
 	this.execute();
     
-  if(this.term && this.term.length>3){
+  if(this.term && this.term.length >= this.minTermLength){
      
       this.createRegexp();
       var matches = this.executeRegexp();
@@ -64,6 +64,7 @@ Compute the internal state of the widget
 contextWidget.prototype.execute = function() {
 	// Get the parameters from the attributes
     this.matchedClass = this.getAttribute("matchClass","matched");
+    this.minTermLength = this.getAttribute("min-term-length", 3);
 	this.tiddler = this.getAttribute( "tiddler",this.getVariable("currentTiddler") );
     this.term =  this.getAttribute("term",this.getAttribute("searchTerm"));
 	this.contextLength = this.getAttribute("length",50);

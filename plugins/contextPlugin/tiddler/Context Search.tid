@@ -14,6 +14,9 @@ type: text/vnd.tiddlywiki
 </$linkcatcher>
 
 <$reveal state="$:/temp/advancedsearch" type="nomatch" text="">
+
+<$set name="resultCount" value="""<$count filter="[!is[system]search{$:/temp/advancedsearch}] "/>""">
+
 <div class="tw-search-results">
 
 <<lingo Standard/Matches>>
@@ -24,6 +27,8 @@ type: text/vnd.tiddlywiki
 </$list>
 
 </div>
+
+</$set>
 
 </$reveal>
 

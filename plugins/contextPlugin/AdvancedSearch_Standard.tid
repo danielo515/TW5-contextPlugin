@@ -1,0 +1,33 @@
+caption: {{$:/language/Search/Standard/Caption}}
+created: 20201210022442789
+tags: $:/tags/AdvancedSearch
+title: $:/core/ui/AdvancedSearch/Standard
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/Search/
+<$linkcatcher to="$:/temp/advancedsearch">
+
+<<lingo Standard/Hint>>
+
+<div class="tc-search">
+<$edit-text tiddler="$:/temp/advancedsearch" type="search" tag="input" focus={{$:/config/Search/AutoFocus}}/>
+<$reveal state="$:/temp/advancedsearch" type="nomatch" text="">
+<$button class="tc-btn-invisible">
+<$action-setfield $tiddler="$:/temp/advancedsearch" $field="text" $value=""/>
+{{$:/core/images/close-button}}
+</$button>
+</$reveal>
+</div>
+
+</$linkcatcher>
+
+<$reveal state="$:/temp/advancedsearch" type="nomatch" text="">
+<$list filter="[{$:/temp/advancedsearch}minlength{$:/config/Search/MinLength}limit[1]]" emptyMessage="""<div class="tc-search-results">{{$:/language/Search/Search/TooShort}}</div>""" variable="listItem">
+<$set name="searchTiddler" value="$:/temp/advancedsearch">
+
+{{$:/core/ui/DefaultSearchResultList}}
+
+</$set>
+</$list>
+</$reveal>
+

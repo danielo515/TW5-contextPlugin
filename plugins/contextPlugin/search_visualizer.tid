@@ -2,13 +2,16 @@ title: $:/plugins/danielo515/ContextPlugin/visualizer
 tags: $:/tags/SearchResults
 caption: Context
 
-\define lingo-base() $:/language/Search/
+\define searchResults()
+<$set name="resultCount" value="""<$count filter="[!is[system]search{$(searchTiddler)$}]"/>""">
 
-<$set name="resultCount" value="""<$count filter="[!is[system]search{$:/temp/search}] "/>""">
+{{$:/language/Search/Matches/Standard/Matches}}
 
-<<lingo Standard/Matches>>
-
-<$list filter="[!is[system]search{$:/temp/search}sort[title]limit[250]]">
+</$set>
+<$list filter="[!is[system]search{$(searchTiddler)$}sort[title]limit[250]]">
   {{!!title||$:/core/ui/ListItemTemplate}}
-  <$context term={{$:/temp/search}} />
+  <$context term={{$(searchTiddler)$}} />
 </$list>
+\end
+
+<<searchResults>>

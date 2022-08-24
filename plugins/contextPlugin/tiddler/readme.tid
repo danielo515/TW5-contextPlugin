@@ -34,7 +34,7 @@ That will search for tiddlers containing the text specified in [[$:/temp/advance
 | before | Number of characters before the matched term to show | the value of the length parameter |
 | after | Number of characters after the matched term to show | the value of the length parameter |
 | maxMatches | maximun number of matched elements to show. Incrementing this can cause several performance issues | 10 |
-| element | Node element to create. This element will contain the results of the search. If you want to style it its class is `tw-context` | `<pre>` |
+| element | Node element to create. This element will contain the results of the search. If you want to style it its class is `tw-context` | `pre` which will generate a `<pre>` element |
 | matchClass | The css class to assign to the matched terms in the results. This is used to highlight the results | matched |
 | min-term-length | Minimum search length to display context | 3 |
 

@@ -2,7 +2,7 @@ caption: {{$:/plugins/danielo515/ContextPlugin/Caption}}
 created: 20140530173407542
 modified: 20220326092807788
 tags: $:/tags/AdvancedSearch
-title: Context Search
+title: $:/plugins/danielo515/ContextPlugin/ContextSearch
 type: text/vnd.tiddlywiki
 
 \define lingo-base() $:/language/Search/

@@ -3,7 +3,7 @@ This widget works as regular search and shows the result with the searched word 
 
 !Usage
 
-After installing the plugin you will have a new tab in [[$:/AdvancedSearch]] called [[Context Search]]. If you want this functionality in other places you will have to edit the desired tiddler yourself adding the ''context widget''. For more details about using the widget see the section below.
+After installing the plugin you will have a new tab in [[$:/AdvancedSearch]] called [[Context Search|$:/core/ui/AdvancedSearch/Standard]]. If you want this functionality in other places you will have to edit the desired tiddler yourself adding the ''context widget''. For more details about using the widget see the section below.
 
 !!Using the widget
 
@@ -24,7 +24,7 @@ The widgets will search inside the current tiddler by default. Because that you 
 </$list>
 ```
 
-That will search for tiddlers containing the text specified in [[$:/temp/advancedsearch]] and will display a link to the matching tiddlers plus a preview of the matching content. Something very similar is used in [[Context Search]]. Below you can find a complete list of parameters and their default values.
+That will search for tiddlers containing the text specified in [[$:/temp/advancedsearch]] and will display a link to the matching tiddlers plus a preview of the matching content. Something very similar is used in [[Context Search|$:/core/ui/AdvancedSearch/Standard]]. Below you can find a complete list of parameters and their default values.
 
 |! parameter |! description | !default |
 | term | The term you want to search ||
